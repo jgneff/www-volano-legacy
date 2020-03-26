@@ -2,6 +2,9 @@
 # Makefile - builds the volano.com website with SiteMesh and Blueprint
 # ======================================================================
 
+# Prefix of the canonical URL
+BASEURL = http://www.volano.com/
+
 # Commands
 SITEMESH = java -jar $(HOME)/lib/sitemesh-3.0.2-SNAPSHOT.jar
 TIDY     = $(HOME)/opt/tidy-html5-5.7.27/bin/tidy
@@ -14,9 +17,12 @@ SITEMESH_OPTS = -src src -dest tmp -config blueprint.xml
 # https://api.html-tidy.org/tidy/quickref_next.html
 tidy_html = --quiet yes --tidy-mark no --wrap 0
 
-# Fixes the HTML Tidy output for validation
-sed_type := 's/<style type="text\/css">/<style>/'
-sed_html := -e $(sed_type)
+# Fixes the canonical URL and the HTML Tidy output
+link_old := ^\(<link rel="canonical" href="\)http://www.volano.com/\(.*">\)$$
+link_new := \1$(BASEURL)\2
+sed_base := 's|$(link_old)|$(link_new)|'
+sed_type := 's|<style type="text/css">|<style>|'
+sed_html := -e $(sed_base) -e $(sed_type)
 
 # List of HTML targets
 html_src := $(wildcard src/*.html)
