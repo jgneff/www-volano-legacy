@@ -1,0 +1,187 @@
+License Agreement
+
+Status Six Communications
+
+CAREFULLY READ THE FOLLOWING LICENSE AGREEMENT. YOU ACCEPT AND AGREE TO
+BE BOUND BY THIS LICENSE AGREEMENT BY INSTALLING THE SOFTWARE ON YOUR
+SYSTEM. IF YOU DO NOT AGREE TO THIS LICENSE, RETURN THE SOFTWARE TO US
+AND REMOVE IT FROM YOUR SYSTEM.
+
+License Grant
+
+“You” means the person or company who is being licensed to use the
+Software or Documentation. “We,” “us,” and “our” each mean the business
+referred to as “Status Six Communications.”
+
+“Server Software” means the VOLANO chat server computer programs and
+their associated files.
+
+“Client Software” means the VolanoChat, MyVolanoChat, and WebVolanoChat
+Java applet computer programs and their associated files.
+
+“Software” means both the Server Software and the Client Software, and
+includes any upgrades, modified versions, updates, additions, and copies
+of the Software.
+
+“Documentation” means explanatory written materials we provide regarding
+the Software.
+
+“Code Base” means the host names or domain names from which the Client
+Software is distributed and where the Server Software is in use.
+
+“Document Base” means the host names or domain names of the Web pages
+containing and embedding the Client Software.
+
+We hereby grant you a nonexclusive license to use one copy of the Server
+Software on any single computer, provided the Server Software may be in
+use on only one computer at any time. The Server Software is “in use” on
+a computer when it is loaded into temporary memory (RAM) or installed
+into the permanent memory of a computer—for example, a hard disk,
+CD-ROM, or other storage device.
+
+We hereby grant you a nonexclusive license to distribute an unlimited
+number of copies of the Client Software via the HTTP protocol or similar
+World Wide Web distribution methods onto your own or other Web pages,
+for use in connecting to the Server Software licensed to you under this
+Agreement.
+
+The Software we build for you restricts the Code Base to the specific
+host name or domain name you provide and prevents someone from
+re-deploying the Client Software from another Web site for malicious
+purposes. The trial version of the Software restricts the Code Base to
+the local host (localhost, ip6-localhost). We may also restrict the
+Document Base to a list of host names or domain names you provide so
+that the Client Software is accessed only on known Web sites authorized
+by you.
+
+Title
+
+We remain the owner of all right, title, and interest in the Software
+and Documentation.
+
+Archival or Backup Copies
+
+You may copy the Software for back up and archival purposes, provided
+that the original and each copy is kept in your possession and that your
+installation and use of the Software does not exceed that allowed in the
+“License Grant” section above.
+
+Things You May Not Do
+
+The Software and Documentation are protected by Canadian, United States,
+and other copyright laws and international treaties. You must treat the
+Software and Documentation like any other copyrighted material—for
+example, a book.
+
+You agree not to:
+
+  • copy the Documentation,
+  • copy the Software except to make archival or backup copies as
+    provided above,
+  • modify or adapt the Software or merge it into another program,
+  • reverse engineer, disassemble, decompile, or make any attempt to
+    discover the source code of the Software,
+  • sub-license, rent, lease, or lend any portion of the Server Software
+    or Documentation.
+
+Transfers
+
+You may transfer all your rights to use the Software and Documentation
+to another person or legal entity provided you transfer this Agreement,
+the Software, and Documentation, including all copies, updates, and
+prior versions to such person or entity, and that you retain no copies,
+including copies stored on computer.
+
+Limited Warranty
+
+We warrant that for a period of 30 days after delivery of this copy of
+the Software to you:
+
+  • the media on which this copy of the Software is provided to you will
+    be free from defects in materials and workmanship under normal use,
+    and
+  • the Software will perform in substantial accordance with the
+    Documentation.
+
+To the extent permitted by applicable law, THE FOREGOING LIMITED
+WARRANTY IS IN LIEU OF ALL OTHER WARRANTIES OR CONDITIONS, EXPRESS OR
+IMPLIED, AND WE DISCLAIM ANY AND ALL IMPLIED WARRANTIES OR CONDITIONS,
+INCLUDING ANY IMPLIED WARRANTY OF TITLE, NON-INFRINGEMENT,
+MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE, regardless of
+whether we know or had reason to know of your particular needs. No
+employee, agent, dealer, or distributor of ours is authorized to modify
+this limited warranty, nor to make any additional warranties.
+
+SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO
+THE ABOVE EXCLUSION MAY NOT APPLY TO YOU.
+
+Limited Remedy
+
+Our entire liability and your exclusive remedy for breach of the
+foregoing warranty shall be, at our option, either to:
+
+  • return the price you paid, or
+  • repair or replace the Software or media that does not meet the
+    foregoing warranty if it is returned to us with a copy of your
+    receipt.
+
+Before we return the price you paid, you must complete and sign a
+statutory declaration (which we will provide) certifying that you have
+destroyed all copies of the Software and Documentation in your control.
+
+IN NO EVENT WILL WE BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST
+PROFITS, LOST SAVINGS, OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES
+ARISING FROM THE USE OF OR THE INABILITY TO USE THE SOFTWARE (EVEN IF WE
+OR AN AUTHORIZED DEALER OR DISTRIBUTOR HAS BEEN ADVISED OF THE
+POSSIBILITY OF THESE DAMAGES), OR FOR ANY CLAIM BY ANY OTHER PARTY.
+
+SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF LIABILITY
+FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT
+APPLY TO YOU.
+
+Term and Termination
+
+This license agreement takes effect upon your use of the Software and
+remains effective until terminated. You may terminate it at any time by
+destroying all copies of the Software and Documentation in your
+possession. It will also automatically terminate if you fail to comply
+with any term or condition of this license agreement. You agree, on
+termination of this license, to destroy all copies of the Software and
+Documentation in your possession.
+
+Confidentiality
+
+The Software contains trade secrets and proprietary know-how that belong
+to us, and it is being made available to you in strict confidence. ANY
+USE OR DISCLOSURE OF THE SOFTWARE, OR OF ITS ALGORITHMS, PROTOCOLS, OR
+INTERFACES, OTHER THAN IN STRICT ACCORDANCE WITH THIS LICENSE AGREEMENT,
+IS FORBIDDEN, AND MAY BE ACTIONABLE AS A VIOLATION OF OUR TRADE SECRET
+RIGHTS.
+
+General Provisions
+
+ 1. This license agreement is the exclusive agreement between you and us
+    concerning the Software and Documentation and supersedes any prior
+    purchase order, communication, advertising, or representation
+    concerning the Software.
+ 2. This license agreement may be modified only by a writing signed by
+    you and us.
+ 3. In the event of litigation between you and us concerning the
+    Software or Documentation, the prevailing party in the litigation
+    will be entitled to recover attorney fees and expenses from the
+    other party.
+ 4. This license agreement is governed by the laws of the Province of
+    British Columbia and the laws of Canada applicable therein, without
+    reference to principles of conflicts of laws. The courts located in
+    Vancouver, British Columbia, and the courts of appeal from those
+    courts, will have exclusive jurisdiction to hear any and all
+    proceedings and disputes in any way related to the Software, the
+    Documentation, or this Agreement.
+
+Included Software
+
+The Server Software includes software developed by the Apache Software
+Foundation and licensed under the Apache Software License, Version 2.0.
+The included software consists of the Apache Tomcat servlet container
+and the Apache Xerces XML parser.
+

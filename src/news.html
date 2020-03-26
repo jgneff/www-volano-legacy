@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Recent news about the VOLANO chat software and the Volano Software company">
+<link rel="canonical" href="http://www.volano.com/news.html">
+<title>Recent News</title>
+</head>
+<body>
+<h1>Recent News</h1>
+
+<h2>March 25, 2020</h2>
+
+<h3>New Applet Certificates</h3>
+
+<p>
+VOLANO versions 2.13.2, 2.13.3, and 2.13.4 contain applets whose time-stamping certificate expired on Monday, <strong>March 16, 2020</strong>, at midnight (00:00) Pacific Daylight Time.
+VOLANO version 2.13.5 contains applets whose time-stamping certificate expires on Sunday, <strong>December 12, 2021</strong> at 11:00 PM (23:00) Pacific Standard Time. 
+</p>
+
+<p>
+A new VOLANO version 2.13.6 is available with applets that have valid certificates until Thursday, <strong>August 1, 2030</strong>, at 16:59:59 Pacific Daylight Time.
+If you are a current customer, please <a href="contact.html">send me an e-mail</a> for information on how to download the build of the VOLANO chat server that is customized for your Web site.
+</p>
+
+<h3>Open-Source VOLANO</h3>
+
+<p>
+The VOLANO chat server is now open-source software!
+For more information, see the new source code <a href="https://github.com/jgneff/volano">repository on GitHub</a>.
+</p>
+
+<h2>July 11, 2014</h2>
+
+<p>
+An update to the VOLANO chat software is available as a full version 2.13 package and as an upgrade from version 2.12.
+This update includes signed applets compatible with the latest security changes in the <strong>Java 8 Plug-in</strong> from Oracle.
+</p>
+
+<p>
+The VOLANO chat applets in this version must request all permissions on the end user's computer to be able to make a network socket connection back to the chat server.
+The applets actually require just one permission, called <a href="files/plugin8.policy" title="Sample Java security policy file for the Java 8 Plug-in sandbox"><em>SocketPermission</em></a>, but Java applets are unable to request the specific permissions they need.
+Applets can choose only between running with no permissions, called <em>sandbox</em>, or running with unrestricted access, called <em>all-permissions</em>.
+</p>
+
+<p>
+Following the <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jweb/security/manifest.html" title="JAR File Manifest Attributes for Security">recommendations of Oracle</a>, the use of the applets is restricted by host name or domain name.
+This change removes the requirement for a server license key based on the server's IP address.
+Instead of your server's IP address, simply provide your server's host name or domain name along with a list of host names or domain names where you want to restrict the applet from being embedded, if any.
+You'll receive you a custom build of the VOLANO chat software to match your settings.
+Please <a href="contact.html">send an e-mail</a> to request a custom build of the software for your system.
+</p>
+
+<p>
+To receive your custom build, provide the <em>code base</em> host name or domain name of your VOLANO applets, along with a list of host names or domain names for the applets' <em>document base</em>.
+You can restrict the code base and document base to specific host names, like <em>www.example.com</em>, or to any host of the domain name, like <em>*.example.com</em>.
+For example, if you currently deploy the applets with HTML like the following:
+</p>
+
+<pre>
+&lt;applet codebase="http://<strong>www.example.com</strong>/vcclient" ...&gt;
+    ...
+&lt;/applet&gt;
+</pre>
+
+<p>
+then the <em>code base</em> host name would be <strong>www.example.com</strong>, while the <em>code base</em> domain name would be <strong>example.com</strong>.
+You can find the list of Web sites you have authorized to embed the VOLANO chat applets from your server, called the applet's <em>document base</em>, in your permitted referrer file (<code>conf/referrers-allow.txt</code>).
+</p>
+
+<h2>April 24, 2014</h2>
+
+<p>
+The <strong>Java 8</strong> Plug-in released on March 18, 2014, no longer allows a Java applet running in the restricted <em>sandbox</em> to make a network connection back to the server from which it came.
+The change is described in <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jweb/enhancements-8.html">Java Rich Internet Applications Enhancement in JDK 8</a> where it states, "For sandbox RIAs, <code>SocketPermissions</code> for the origin host is no longer granted."
+</p>
+
+<p>
+Oracle made this change at the last minute, even after the JDK 8 Final Release Candidate was posted for testing on January 23, 2014.
+The change breaks a feature of Java applets that has worked for 18 years.
+I'm working on a solution to the problem or an alternative that bypasses the problem altogether.
+</p>
+
+<p>
+Meanwhile, the VOLANO chat software version 2.12 works fine with Java 7, and Java 7 is still being provided to end users at <a href="http://www.java.com/">www.java.com</a>.
+You may want to add a note for your users that the VOLANO chat applets work only with Java 7 and do not work with Java 8.
+For those users who have both Java 7 and Java 8 installed, you can mark the applet to load only with Java 7 by adding the Java version string to the applet parameters, like this:
+</p>
+<pre>
+&lt;applet codebase="." archive="COM/volano/VolanoChat.jar"
+        code="COM.volano.VolanoChat.class"
+        width="500" height="60"&gt;
+    <strong>&lt;param name="java_version" value="1.7*"&gt;</strong>
+    &lt;param name="permissions" value="sandbox"&gt;
+    ...
+    &lt;param name="text" value="english.txt"&gt;
+&lt;/applet&gt;
+</pre>
+<p>
+Details of the <code>java_version</code> parameter are explained in the <a href="http://www.oracle.com/technetwork/java/javase/index-141751.html">Java Runtime Environment Version Selection</a> page.
+</p>
+
+<p>
+The final release of Java 8 was posted for developers at the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE Downloads</a> page.
+For end users running applets with the Java Plug-in, the latest available release is Java 7 Update 55, available at the <a href="http://www.java.com/">Java.com</a> Web site.
+In a comment to his <a href="http://mreinhold.org/blog/jdk8-ga">blog post</a>, Mark Reinhold, Chief Architect of the Java Platform Group at Oracle, says, "We're very conservative with java.com auto-updates. We'll switch that over to JDK 8 in a few months."
+So we should have until June 2014 before end users start to receive the Java 8 update automatically.
+</p>
+
+<h2>January 13, 2014</h2>
+
+<p>
+An update to the VOLANO chat software is available for download as a full version 2.12 package and as an upgrade to version 2.11.
+This update includes signed applets compatible with the latest security changes in Java 7 Update 51 being released on January 14, 2014.
+</p>
+<p>
+The update will work with license keys for the VOLANO chat server at version 2.5 or later.
+If you have an earlier version of the VOLANO chat server, please <a href="contact.html">contact me</a> for a more recent license.
+</p>
+
+<h2>October 24, 2012</h2>
+
+<p>
+An update to the VOLANO chat software is available as a full version 2.11 package and as a patch to version 2.10.
+This version works around the bug in Oracle Java 7 that disables the <em>enter</em> and <em>return</em> keys on Mac OS X.
+</p>
+
+<h2>October 17, 2012</h2>
+
+<p>
+The Oracle Java 7 Plug-in on Mac OS X disables the <em>enter</em> and <em>return</em> keys in the text field of the chat room window.
+As a result, Mac users who upgrade to Java 7 are unable to send messages in the chat room.
+There is a work-around that I will post soon in an update to the VOLANO chat software.
+I expect to complete the changes in the next few days and have a full version and upgrade version available for download next week.
+</p>
+
+<p>
+Included in the text box below is the bug report I <a href="http://bugs.sun.com/">submitted to Oracle</a>.
+</p>
+
+<p>
+<em>— John Neffenger</em>
+</p>
+
+<p>
+<label for="bug">Bug report</label><br>
+<textarea id="bug" rows="24" cols="80" readonly="readonly" style="width: 100%">
+Date Created: Thu Oct 18 13:31:28 MDT 2012
+Type:        bug
+Customer Name:   John Neffenger
+status:      Waiting
+Category:    java
+Subcategory: classes_awt
+Company:     Status Six Communications
+release:     7
+hardware:    x86
+OSversion:   macosx
+priority:    3
+Synopsis:    TextField doesn't support AWT 1.0 inheritance event model (newEventsOnly==true).
+
+Description:
+
+FULL PRODUCT VERSION :
+java version "1.7.0_07"
+Java(TM) SE Runtime Environment (build 1.7.0_07-b10)
+Java HotSpot(TM) 64-Bit Server VM (build 23.3-b01, mixed mode)
+
+ADDITIONAL OS VERSION INFORMATION :
+Mac OS X Mountain Lion - System Version: OS X 10.8.2 (12C60), Kernel Version: Darwin 12.2.0
+
+A DESCRIPTION OF THE PROBLEM :
+The TextField component in Oracle Java 7 on Mac OS X get marked with 'newEventsOnly' set to 'true', disabling any support for the deprecated AWT 1.0 inheritance event model.
+
+I think it happens in java.awt.Component with a call to this method:
+
+public synchronized void addInputMethodListener(InputMethodListener l) {
+    if (l == null) {
+        return;
+    }
+    inputMethodListener = AWTEventMulticaster.add(inputMethodListener, l);
+    newEventsOnly = true;
+}
+
+After that call, no events are reported with the AWT 1.0 event model, essentially disabling the component for any programs still using the old model.
+
+REGRESSION. Last worked in version 6u31
+
+STEPS TO FOLLOW TO REPRODUCE THE PROBLEM :
+Run the 'Java10' program included below with Oracle Java 7 on Mac OS X. Enter text in the text field and press the Enter key to post the text to the text area. Nothing happens. The Enter key events are never report to the program.
+
+EXPECTED VERSUS ACTUAL BEHAVIOR :
+EXPECTED -
+The Enter key should be reported as an action event to the program, allowing it to post the text to the text area. This is what happens with Java 7 on Linux and Windows.
+
+ACTUAL -
+Nothing happens. On Mac OS X you must press the Send button to post the text, as the Send button still reports the AWT 1.0 style events that the program expects.
+
+REPRODUCIBILITY :
+This bug can be reproduced always.
+
+---------- BEGIN SOURCE ----------
+package com.status6.events;
+
+import java.awt.Button;
+import java.awt.Event;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Panel;
+import java.awt.TextArea;
+import java.awt.TextField;
+
+/**
+ * A frame that uses the AWT 1.0 inheritance event model.
+ *
+ * @author John Neffenger
+ */
+public class Java10 extends Frame {
+
+    TextArea area;
+    TextField field;
+    Button send;
+    Button quit;
+
+    public Java10(String title) {
+        super(title);
+        area = new TextArea("", 25, 50, TextArea.SCROLLBARS_VERTICAL_ONLY);
+        field = new TextField(50);
+        send = new Button("Send");
+        quit = new Button("Quit");
+        area.setEditable(false);
+
+        Panel panel = new Panel(new FlowLayout());
+        panel.add(field);
+        panel.add(send);
+        panel.add(quit);
+
+        add("Center", area);
+        add("South", panel);
+        pack();
+    }
+
+    private void postText() {
+        area.append(field.getText() + '\n');
+        field.setText("");
+        field.requestFocus();
+    }
+
+    private void quit() {
+        setVisible(false);
+        dispose();
+        System.exit(0);
+    }
+
+    @Override
+    public boolean action(Event event, Object what) {
+        System.out.println("Action = " + event);
+        boolean handled = false;
+        if (event.target == send || event.target == field) {
+            postText();
+            handled = true;
+        } else if (event.target == quit) {
+            quit();
+        }
+        return handled;
+    }
+
+    @Override
+    public boolean handleEvent(Event event) {
+        if (event.id == Event.WINDOW_DESTROY) {
+            quit();
+        }
+        return super.handleEvent(event);
+    }
+
+    @Override
+    public void requestFocus() {
+        field.requestFocus();
+    }
+
+    /**
+     * Creates the frame, sets it visible, and requests the keyboard focus.
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Frame frame = new Java10("My Frame");
+        frame.setVisible(true);
+        frame.requestFocus();
+    }
+}
+
+---------- END SOURCE ----------
+
+CUSTOMER SUBMITTED WORKAROUND :
+The workaround is to rewrite the application to use the AWT 1.1 delegation event model, as follows:
+
+package com.status6.events;
+
+import java.awt.Button;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Panel;
+import java.awt.TextArea;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+/**
+ * A frame that uses the AWT 1.1 delegation event model.
+ *
+ * @author John Neffenger
+ */
+public class Java11 extends Frame {
+
+    TextArea area;
+    TextField field;
+    Button send;
+    Button quit;
+
+    public Java11(String title) {
+        super(title);
+        area = new TextArea("", 25, 50, TextArea.SCROLLBARS_VERTICAL_ONLY);
+        field = new TextField(50);
+        send = new Button("Send");
+        quit = new Button("Quit");
+        area.setEditable(false);
+
+        Panel panel = new Panel(new FlowLayout());
+        panel.add(field);
+        panel.add(send);
+        panel.add(quit);
+
+        add("Center", area);
+        add("South", panel);
+        addListeners();
+        pack();
+    }
+
+    private void postText() {
+        area.append(field.getText() + '\n');
+        field.setText("");
+        field.requestFocus();
+    }
+
+    private void quit() {
+        setVisible(false);
+        dispose();
+        System.exit(0);
+    }
+
+    private void addListeners() {
+        // Using references to an anonymous inner class.
+        ActionListener postingListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Posting text...");
+                postText();
+            }
+        };
+        field.addActionListener(postingListener);
+        send.addActionListener(postingListener);
+
+        // Using the compact form of anonymous inner classes without references.
+        quit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Quitting...");
+                quit();
+            }
+        });
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.out.println("Window closing...");
+                quit();
+            }
+        });
+    }
+
+    @Override
+    public void requestFocus() {
+        field.requestFocus();
+    }
+
+    /**
+     * Creates the frame, sets it visible, and requests the keyboard focus.
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Frame frame = new Java11("My Frame");
+        frame.setVisible(true);
+        frame.requestFocus();
+    }
+}
+</textarea>
+</p>
+
+</body>
+</html>
+

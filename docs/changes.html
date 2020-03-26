@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Recent changes to the VOLANO chat software">
+<link rel="canonical" href="http://www.volano.com/changes.html">
+<meta name="robots" content="NOODP">
+<meta name="viewport" content="width=960">
+<link rel="stylesheet" href="styles/screen.css" type="text/css">
+<link rel="icon" href="images/site-icon-16.png" type="image/png">
+<title>Software Changes - volano.com</title>
+</head>
+<body>
+<div id="contents" class="container">
+<div id="header">
+<div id="site-logo" class="span-4"><a href="index.html"><img src="images/site-logo.png" alt="[Logo]" width="150" height="100"></a></div>
+<div id="site-info" class="prepend-top span-13 colborder">
+<div id="site-name"><a href="index.html"><span class="expand">VOLANO</span></a>™</div>
+<div id="site-slogan">real-time social networking since 1996</div>
+</div>
+<div id="site-links" class="prepend-top span-6">
+<ul>
+<li><a href="https://github.com/jgneff/volano">Fork me on GitHub</a></li>
+<li><a href="https://www.status6.com/sponsor.html">♥ Sponsor me on STATUS:6</a></li>
+</ul>
+</div>
+</div>
+<hr class="space">
+<div id="nav" class="span-4">
+<ul class="large">
+<li><a href="features.html">Features</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="support.html">Support</a></li>
+<li><a href="benchmarks.html">Benchmark</a></li>
+</ul>
+</div>
+<div id="article" class="append-bottom span-13 append-1">
+<p><a href="./">Home</a> &gt; <a href="news.html">News</a> &gt; Software Changes</p>
+<h1>Software Changes</h1>
+<p>Recent changes to the VOLANO chat software are listed below in reverse chronological order.</p>
+<h2>Version 2.10</h2>
+<dl>
+<dt>Added option to force Java Swing chat text area</dt>
+<dd>
+<p>Added the Boolean applet property <em>textarea.swing.force</em> to force the applets to use a Java Swing text area when set to <em>true</em>. The default value is <em>false</em> for backward compatibility. Before this change, the applets used the Java Swing user interface only when it was required to work around <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5003402">Java Bug 5003402</a>, "java.awt.TextArea stops scrolling when it loses the keyboard focus." Now the alternate interface can be set by the chat server administrator if it's preferred over the older AWT interface.</p>
+</dd>
+<dt>Added option to replace non-printable characters</dt>
+<dd>
+<p>Added the Boolean applet property <em>char.replace.nonprintable</em> which replaces all Unicode control (Cc), format (Cf), private use (Co), surrogate (Cs), and unassigned (Cn) characters, along with line (Zl), paragraph (Zp), and space (Zs) separators, with the normal ASCII space character (U+0020) in chat messages when set to <em>true</em>. The default value is <em>false</em> for backward compatibility. See the list of Unicode <a href="http://www.fileformat.info/info/unicode/category/index.htm" title="Unicode Character Categories">character categories</a> and the Unicode 5.1.0 <a href="http://www.unicode.org/Public/5.1.0/ucd/PropList.txt" title="Unicode 5.1.0 Property List">property list</a> for details.</p>
+</dd>
+</dl>
+<h2>Version 2.9</h2>
+<dl>
+<dt>Upgraded to Tomcat 4.1.40</dt>
+<dd>
+<p>Upgraded the embedded Java servlet container to Apache Tomcat version 4.1.40 from the earlier version 4.1.39.</p>
+</dd>
+<dt>Updated start-up scripts</dt>
+<dd>
+<p>Updated the Bourne Shell and Windows batch file start-up scripts with the latest Java versions and locations.</p>
+</dd>
+<dt>Installed Java Security Manager</dt>
+<dd>
+<p>Enabled the Java Security Manager to restrict access for the VOLANO servlets to only those resources specified explicitly in the security policy defined in <em>conf/policy.txt</em>. The new Java properties in the start-up scripts are:</p>
+<pre>
+-Djava.security.manager -Djava.security.policy=conf/policy.txt
+</pre></dd>
+<dt>Fixed ConfigServlet character encoding</dt>
+<dd>
+<p>Changed the declared character encoding of the ConfigServlet template file back to ISO-8859-1, which is the actual default encoding of the applet property files loaded and saved using methods of the Java Properties class. The change is to just the first line of the <em>template.html</em> file:</p>
+<pre>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+</pre></dd>
+<dt>Changed <em>no license</em> messages</dt>
+<dd>
+<p>Changed NO_LICENSE and NEW_LICENSE messages in <em>Msg.java</em> from these:</p>
+<pre>
+Please download a new trial license key from www.volano.com.
+Please download a trial license key from www.volano.com.
+</pre>
+<p>to these:</p>
+<pre>
+Please obtain a new trial license key at www.volano.com.
+Please obtain a trial license key at www.volano.com.
+</pre></dd>
+</dl>
+<h2>Version 2.8.3</h2>
+<dl>
+<dt>Closing window bug on Linux</dt>
+<dd>
+<p>Added Room and Help menu items to the VolanoChat and MyVolanoChat applet private chat windows so that they can be closed on Linux as a workaround for <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6597398">Java Bug 6597398</a>, "Impossible to close windows through 'x' button or ALT-F4."</p>
+</dd>
+<dt>Upgraded to Tomcat 4.1.39</dt>
+<dd>
+<p>Upgraded the embedded Java servlet container to Apache Tomcat version 4.1.39 from the earlier version 4.1.37.</p>
+</dd>
+<dt>Updated start-up scripts</dt>
+<dd>
+<p>Updated the Bourne Shell and Windows batch file start-up scripts with the latest Java versions and locations.</p>
+</dd>
+<dt>Updated trademark and copyright notices</dt>
+<dd>
+<p>Changed the following trademark notices:</p>
+<pre>
+VolanoChat(TM) Server    -&gt; VOLANO(TM) Chat Server
+VolanoMark(TM) Benchmark -&gt; VOLANO(TM) Chat Server Benchmark
+</pre>
+<p>Changed the copyright notice from:</p>
+<pre>
+Copyright (c) 1996-2008 Volano Software. All rights reserved.
+</pre>
+<p>to:</p>
+<pre>
+Copyright (c) 1996-2009 Volano Software
+</pre>
+<p>Changed trademark usage and copyright notices in the product configuration files and Web pages.</p>
+</dd>
+</dl>
+<h2>Version 2.8.2</h2>
+<dl>
+<dt>Upgraded to Tomcat 4.1.37</dt>
+<dd>
+<p>Upgraded the embedded servlet container to Apache Tomcat version 4.1.37 from the earlier version 4.1.34.</p>
+</dd>
+</dl>
+<h2>Version 2.8.a (beta)</h2>
+<dl>
+<dt>Upgraded to Tomcat 4.1.34</dt>
+<dd>
+<p>Upgraded the embedded servlet container to Apache Tomcat version 4.1.34 from the earlier version 4.1.31, making the following changes in the support libraries:</p>
+<dl>
+<dt>Replaced</dt>
+<dd>
+<pre>
+lib/commons-collections.jar -&gt; lib/commons-collections-3.2.jar
+lib/commons-digester.jar    -&gt; lib/commons-digester-1.7.jar
+lib/commons-logging-api.jar -&gt; lib/commons-logging-api-1.1.jar
+lib/jakarta-regexp-1.3.jar  -&gt; lib/jakarta-regexp-1.4.jar
+lib/xmlParserAPIs.jar       -&gt; lib/xml-apis.jar
+</pre></dd>
+<dt>Added</dt>
+<dd>
+<pre>
+lib/commons-modeler.jar
+lib/tomcat4-coyote.jar
+</pre></dd>
+</dl>
+</dd>
+<dt>Added support for Windows Server 2003 x64 Editions</dt>
+<dd>
+<p>Added the 64-bit version of the JavaService program, <em>JavaService64.exe</em>, for installing the VolanoChat server as a Windows Service under Windows Server 2003 x64 Editions.</p>
+<dl>
+<dt>JavaService.exe for 32-bit Windows</dt>
+<dd>
+<pre>
+JavaService Version 2,0,10,0
+(c) 2006 Multiplan Consultants Ltd
+See http://javaservice.objectweb.org
+</pre></dd>
+<dt>JavaService64.exe for 64-bit Windows</dt>
+<dd>
+<pre>
+JavaService Version 2,0,7,0
+(c) 2005 Multiplan Consultants Ltd
+See http://javaservice.objectweb.org
+</pre></dd>
+</dl>
+</dd>
+<dt>Restricted workaround for Java Bug 5003402 to just the broken versions</dt>
+<dd>
+<p>Modified the applets to use the Swing text area as a work-around for <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5003402">Java Bug 5003402</a>, "REGRESSION: java.awt.TextArea stops scrolling when it loses the keyboard focus," only for the following broken versions:</p>
+<ul>
+<li>Sun Java 5 Beta (1.5.0-beta*)</li>
+<li>Sun Java 5 (1.5.0)</li>
+<li>Sun Java 5 Update 1 (1.5.0_01)</li>
+</ul>
+<p>This change fixes a bug where some users had invisible text in the output chat message text area when using Sun Java 1.5.0_06 on Windows with the Swing text area.</p>
+</dd>
+<dt>Changed default to allow one outstanding unconfirmed chat message</dt>
+<dd>
+<p>Changed the default <em>unconfirmed.chat</em> property to a default of one instead of zero, allowing for one unconfirmed chat message before preventing further messages. This change makes it less likely that temporary network congestion will cause people to see the <em>red text</em> and have their Enter key blocked while chatting, as should happen for people trying to flood the chat room.</p>
+</dd>
+<dt>Updated start-up scripts</dt>
+<dd>
+<p>Updated the Bourne Shell and Windows batch file start-up scripts with the latest Sun JDK 6 (Java version 1.6.0).</p>
+</dd>
+</dl>
+<h2>Version 2.7.0</h2>
+<dl>
+<dt>Added membership support to the MyVolanoChat applet</dt>
+<dd>
+<p>Added member name and password support to MyVolanoChat applet through the following applet parameters:</p>
+<pre>
+&lt;param name="member"   value="true"&gt;
+&lt;param name="username" value=""&gt;
+&lt;param name="password" value=""&gt;
+</pre></dd>
+<dt>Added window title parameter to the MyVolanoChat applet</dt>
+<dd>
+<p>Added a <em>title</em> parameter to the MyVolanoChat applet for overriding the window title with a more friendly room name. The room title is a way to override the visible name of the room if you don't want the actual room name to be used in the window title or in applet messages on the Web page. You add it to the MyVolanoChat applet parameters like this:</p>
+<pre>
+&lt;param name="group" value="### SAMPLE ACTUAL ROOM NAME ###"&gt;
+&lt;param name="title" value="Sample Nice Room Title"&gt;
+</pre>
+<p>Note that for hidden personal rooms created by the MyVolanoChat applet, the room is still known in the server by the referring Web page address.</p>
+</dd>
+<dt>Added room parameter to the membership access script</dt>
+<dd>
+<p>Added the <em>group</em> applet parameter value as an optional parameter to the membership access script. The name specified by the applet <em>group</em> parameter is passed to your membership access and name scripts if you add it as parameter number 2 to the template in your <em>conf/properties.txt</em> server properties file, like this:</p>
+<pre>
+member.access=http://localhost:8080/member/access?name={0}&amp;password={1}&amp;room={2}
+member.name=http://localhost:8080/member/name?name={0}&amp;room={2}
+</pre></dd>
+<dt>Upgraded to Apache Tomcat 4.1.31</dt>
+<dd>
+<p>Upgraded the built-in Apache Tomcat servlet container from version 4.1.30 to the latest version 4.1.31.</p>
+</dd>
+<dt>Fixed Java Plug-in hang</dt>
+<dd>
+<p>Fixed a bug where the Sun Java Plug-in would hang and lock up the Java virtual machine and Web browser when the Web page containing the VolanoChat applet was reloaded while the applet window was open.</p>
+</dd>
+<dt>Fixed exit page bug</dt>
+<dd>
+<p>Fixed a bug where the error page defined by <em>page.exit.error</em> was showing up even when the applet was closed normally. The applet now shows the exit page defined by <em>page.exit</em> as expected.</p>
+</dd>
+<dt>Removed beeping bug in Java 1.6</dt>
+<dd>
+<p>Removed the beep sound that played each time a message was sent in a chat room when running the applets under the Sun Java Plug-in version 1.6.</p>
+</dd>
+<dt>Fixed initial applet keyboard focus</dt>
+<dd>
+<p>Changed the applet so that its initial keyboard focus is on the applet button when there are no text fields present when using the Sun Java Plug-in versions 1.3, 1.5, and 1.6. Pressing the Enter key or Space Bar will activate the button.</p>
+</dd>
+<dt>Put chat message area into keyboard focus loop</dt>
+<dd>
+<p>Changed the applet to put the Swing-based chat message area into the keyboard focus traversal loop when running under the Sun Java Plug-in versions 1.3, 1.5, and 1.6.</p>
+</dd>
+<dt>Updated start-up files to Java 1.5.0_07</dt>
+<dd>
+<p>Updated the latest Java version to 1.5.0_07 in the start-up script and batch files.</p>
+</dd>
+<dt>Updated README and LICENSE</dt>
+<dd>
+<p>Updated the README with the latest Volano Software contact information. Update the LICENSE with the new VolanoChat license agreement.</p>
+</dd>
+</dl>
+<h2>Version 2.6.5</h2>
+<dl>
+<dt>Fixed ProxyServlet redirects and cookie age</dt>
+<dd>
+<p>Allow for a non-absolute URL in the HTTP redirect response Location header. Let the cookies last one year (rather than until the browser is closed) so that ad servers which set their cookie on the first click-through will work immediately on subsequent browser sessions.</p>
+</dd>
+</dl>
+</div>
+<div id="aside" class="span-6">
+<div class="aside-heading"><a href="news.html">News</a></div>
+<p class="notice"><b>2020-03-25</b> — VOLANO version 2.13.6 is now available with new applet certificates valid until August 2030. <a href="news.html">More…</a></p>
+<div class="aside-heading"><a href="about.html">About</a></div>
+<p>The VOLANO™ chat software for the Java™ platform lets you build on-line communities and add real-time social networking to your Web site. <a href="about.html">More…</a></p>
+<div class="aside-heading"><a href="contact.html">Contact</a></div>
+<p><a href="mailto:john@status6.com">John Neffenger &lt;john@status6.com&gt;</a><br>
+<a href="contact.html">More…</a></p>
+<p class="quiet">A PROJECT OF <a href="http://www.status6.com">STATUS:6</a>™</p>
+</div>
+<hr>
+<div id="footer" class="prepend-4 span-20">
+<p class="quiet">Copyright © 2015–2020 John Neffenger. VOLANO is a registered trademark of John Neffenger. JAVA is a registered trademark of Oracle. Check <a href="http://validator.w3.org/check?uri=referer">HTML</a>, <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>.</p>
+</div>
+</div>
+</body>
+</html>

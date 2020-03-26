@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="VolanoMark, the VOLANO chat server benchmark">
+<link rel="canonical" href="http://www.volano.com/benchmarks.html">
+<title>VOLANO Benchmark</title>
+</head>
+<body>
+<h1>VOLANO Benchmark</h1>
+
+<p>The VOLANO Benchmark, also known as <em>VolanoMark</em>, is a
+testing program that lets you determine the performance and connection
+limitations of your hardware, operating system, and Java platform when
+running the VOLANO chat server. The VOLANO Benchmark consists of the
+VOLANO chat server along with a test driver that simulates thousands of
+chat clients.</p>
+
+<p>See the <a href="http://www.volano.org/reports.html">Volano
+Reports</a> at <em>volano.org</em> for the results of the VOLANO
+Benchmark tests performed by Volano Software.</p>
+
+<h2>Download</h2>
+
+<p>You can download the VOLANO chat server benchmark from the following
+links:</p>
+
+<dl>
+<dt><a href="files/volano_benchmark_2_9_0.class">volano_benchmark_2_9_0.class</a></dt>
+<dd>For Microsoft Windows, GNU/Linux, Apple Mac OS X, Sun Solaris,
+and FreeBSD operating systems.</dd>
+
+<dt><a href="files/volano_benchmark_2_9_0.md5">volano_benchmark_2_9_0.md5</a></dt>
+<dd>To verify the downloaded file (using <em>md5sum</em>, for
+example).</dd>
+</dl>
+
+<h2>Installation</h2>
+
+<p>To start the installation program, change to the directory where
+you saved it and enter one of the following commands, substituting
+<em>java</em> with the name of the Java interpreter on your system:</p>
+
+<dl>
+<dt>java volano_benchmark_2_9_0</dt>
+<dd>when connected with a graphical user interface.</dd>
+
+<dt>java volano_benchmark_2_9_0 -o <i>directory</i></dt>
+<dd>when connected with a Command Prompt or Terminal window, where
+<i>directory</i> is the name of the directory where you want to install
+the VOLANO benchmark.</dd>
+</dl>
+
+<h2>Running</h2>
+
+<p>Modify the following Bash Shell start-up scripts to run the tests on
+your network:</p>
+
+<dl>
+<dt>loopserver.sh</dt>
+<dd>to start the server side of the loop-back performance test.</dd>
+
+<dt>loopclient.sh</dt>
+<dd>to start the client side of the loop-back performance test.</dd>
+
+<dt>netserver.sh</dt>
+<dd>to start the server side of the network scalability test.</dd>
+
+<dt>netclient.sh</dt>
+<dd>to start the client side of the network scalability test.</dd>
+
+<dt>startup.sh</dt>
+<dd>the main script called by the others.</dd>
+</dl>
+
+<p>In particular, make sure to change the target host name at the top
+of the <em>startup.sh</em> file so that it points to the machine on your
+network running the VOLANO chat server side of the benchmark:</p>
+
+<pre>
+# Name of the host running the server side of the network test.
+host=test.example.com
+</pre>
+
+<p>You may need to make other modifications, such as changing the
+locations in the scripts of the Java platforms installed on your
+system. Note that the scripts require the
+<a href="http://www.cygwin.com/">Cygwin Bash Shell</a> to run on
+Windows.</p>
+
+<h2>Notes</h2>
+
+<p>You can get help on the options of the client side test driver by
+running it without any arguments from the installation directory:</p>
+
+<pre>
+$ cd volano-benchmark-2.9.0/
+$ java -cp lib/volano-chat-server.jar COM.volano.Mark
+Usage: java COM.volano.Mark [options]
+
+where options include (default in parenthesis):
+  -run              run the benchmark
+  -help             print this message
+  -version          print version information
+  -jvm              print Java Virtual Machine environment
+  -file  &lt;string&gt;   output file name (volano-mark.log)
+  -host  &lt;string&gt;   server host name (localhost)
+  -port  &lt;integer&gt;  server port number (8000)
+  -start &lt;integer&gt;  starting room number (1)
+  -rooms &lt;integer&gt;  number of rooms (50)
+  -users &lt;integer&gt;  number of users per room (20)
+  -count &lt;integer&gt;  messages per user or 0 for no limit (100)
+  -pause &lt;integer&gt;  message pause in seconds or 0 for pacing (0)
+</pre>
+
+<p>You need to make the shell scripts executable after installation with
+a command like the following:</p>
+
+<pre>
+chmod +x *.sh
+</pre>
+
+<p>On many systems, such as GNU/Linux, Sun Solaris, and FreeBSD, you'll
+need to increase the per-process file descriptor limit so that the user
+account running the VOLANO chat server and benchmark can open at least
+1,000 network socket connections and roughly 30 or so files. The default
+hard file descriptor limit is often 1,024, which is not enough. If you
+increase it to 10,240, the benchmark can run all the way up to the 10,000
+connections required in the network scalability tests. On GNU/Linux,
+you increase the per-process file descriptor limit in the file:</P>
+
+<pre>
+/etc/security/limits.conf
+</pre>
+
+<p>by adding the following line, where <em>john</em> is the name of the
+user account running the VOLANO benchmark:</p>
+
+<pre>
+#&lt;domain&gt;      &lt;type&gt;  &lt;item&gt;         &lt;value&gt;
+# ...
+john           hard    nofile         10240
+</pre>
+
+<p>Log out and log back in after making the change. Apple Mac OS X has an
+unlimited hard limit, while the setting is ignored on Microsoft Windows,
+where the Java virtual machine uses the Windows API rather than the
+Cygwin Bash Shell settings. You can see the hard and soft per-process
+file descriptor limits with these commands:</p>
+
+<pre>
+ulimit -Hn
+ulimit -Sn
+</pre>
+
+</body>
+</html>
