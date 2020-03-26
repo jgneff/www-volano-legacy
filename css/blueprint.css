@@ -1,0 +1,200 @@
+/*
+    A Blueprint CSS Framework layout compatible with Google AdSense
+    and using color schemes from the Drupal Garland theme.
+
+    blueprint.css - Blueprint CSS Framework overrides and additions
+    page.css      - Rules for my identifier blocks and classes
+    colors.css    - Color schemes from the Drupal Garland theme
+    hevea.css     - Rules for HEVEA output from LaTeX source
+    adsense.css   - Styles for Google AdSense boxes
+
+    Look into using LESS <http://lesscss.org/>.
+*/
+
+/*
+    blueprint.css - Blueprint CSS Framework overrides and additions
+
+    General layout (defined in template HTML file):
+        24 columns (950px) = 4 + 13 + 1 + 6 for
+            Navigation   4 columns  150px + 10px margin
+            Main        13 columns  510px + 10px margin
+            Border       1 column    30px + 10px margin
+            Aside        6 columns  230px
+
+    960 Grid System Alternative
+        960 total (593/367 px ~ 1.62) - Golden Ratio = 1.61803399
+        24-column (600/360 px ~ 1.67) - 15 left, 9 right (590/350 px)
+            The 5-pixel margins and 10-pixel buffers are too small.
+            590px holds 84 monospace characters at 12px.
+        16-column (600/360 px ~ 1.67) - 10 left, 6 right (580/340 px)
+            Wide enough for 15px Liberation Serif body text.
+            Just fits Google "Large Rectangle" ads (336px).
+            580px holds:
+                82 monospace characters at 12px
+                72 monospace characters at 13px
+                72 monospace characters at 14px
+                64 monospace characters at 15px
+        12-column (560/400 px = 1.40) -  7 left, 5 right (540/380 px)
+            Not enough sub-columns to work with.
+            540px holds 77 monospace characters at 12px.
+
+    Approximate text length at default 12px font size:
+        11 columns (430px) holds 61 monospace characters
+        12 columns (470px) holds 67 monospace characters
+        13 columns (510px) holds 72 monospace characters <-- max 72
+        14 columns (550px) holds 78 monospace characters
+        15 columns (590px) holds 84 monospace characters
+
+    Columns, pixel widths, and image sizes (default 18px per line):
+        11 columns = 430    408 x 306 (4:3, 17 lines)
+        12 columns = 470    456 x 342 (4:3, 19 lines)
+        13 columns = 510    504 x 378 (4:3, 21 lines) <-- 500px x 375px + 3px
+        14 columns = 550    528 x 396 (4:3, 22 lines)
+        15 columns = 590    576 x 432 (4:3, 24 lines)
+        16 columns = 630    600 x 450 (4:3, 25 lines)
+
+    A font size of 12px is quite small on the 27-inch iMac and the iPad.
+        12px = 75% of 16px default
+            Firefox Zoom Out = 10.8px
+            Firefox Zoom In  = 13.2px
+        13px = 81.25% of 16px default
+            Firefox Zoom Out = 11.7px
+            Firefox Zoom In  = 14.3px
+
+    Droid Serif, Droid Sans, and Droid Sans Mono don't show up on
+    Android if it encouters any font it doesn't know in the list!
+        Issue 11356: Browser not falling back to monospace font.
+        http://code.google.com/p/android/issues/detail?id=11356
+
+    "Lucida Console" replaced "Andale Mono" on Microsoft Windows
+    starting with Windows ME, but neither font family has bold or
+    italic styles as does "Courier New". The browsers fake the missing
+    styles, which works okay for italic, but the boldface glyphs are
+    wider than the normal monospace. So stick with "Courier New".
+
+    Let Linux, Mac, and UNIX systems decide the best substitute for
+    the Microsoft fonts (see 'bin/match.sh').
+
+    Fonts with higher aspect values ("screen fonts"):
+    font-family: Verdana, sans-serif;
+    font-family: Georgia, serif;
+    font-family: "Courier New", monospace;
+
+    Fonts with lower aspect values ("print fonts"):
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Times New Roman", Times, serif;
+    font-family: "Courier New", Courier, monospace;
+
+    Unicode font for older systems:
+    font-family: "Lucida Sans Unicode", Verdana, sans-serif;
+*/
+
+/* Leave 10px right margin on right-hand column (aside). */
+.container {
+    width: 960px;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5, h6, #site-info, .aside-heading {
+    font-family: Georgia, serif;
+}
+pre, code, tt, samp, kbd, var {
+    font-family: "Courier New", monospace;
+}
+
+/*
+    Blueprint sets "outline: 0" to get rid of the keyboard focus
+    outline, so we should add it back in for accessibility.
+*/
+:focus {
+    outline: 1px dotted;
+}
+
+/*
+    If characters (such as '↪') don't show up on older browsers and
+    operating systems, use this class. Lucida Sans Unicode was the
+    first Unicode-encoded font and is pre-installed on all Microsoft
+    Windows versions since Windows 98.
+
+    Note that if there's no match, the value is inherited from the
+    user agent's initial value, not the parent element as you might
+    expect. See:
+        http://reference.sitepoint.com/css/font-family
+*/
+.unicode {
+    font-family: "Lucida Sans Unicode", Verdana, sans-serif;
+}
+
+var {
+    font-style: italic;
+}
+
+/*
+    Because of this bug in Chrome and Safari:
+        CSS2: Implement better quote support (for the q tag)
+        https://bugs.webkit.org/show_bug.cgi?id=3234
+    this doesn't work:
+        q {quotes: '“' '”' '‘' '’';}
+        q:before {content: open-quote;}
+        q:after  {content: close-quote;}
+*/
+q:before {
+    content: '“';
+}
+q:after {
+    content: '”';
+}
+
+/* A no-break class for command options. */
+.nobr {
+    white-space: nowrap;
+}
+
+.sc {
+    font-variant: small-caps;
+}
+
+/* Don't let input text fields (with 12px padding) overflow columns. */
+input {
+    max-width: 90%;
+}
+
+/* Use 12 columns for text areas (out of 13). */
+textarea {
+    width: 470px;   /* 12 cols = 470px, 13 cols = 510px */
+}
+
+/* Float a block on the left or right with wrapped text. */
+div.left {
+    float: left;
+    margin: 0 1.5em 1.5em 0;
+}
+div.right {
+    float: right;
+    margin: 0 0 1.5em 1.5em;
+}
+
+/* Align paragraph and table cell contents on the left, right, or center. */
+p.left, th.left, td.left {
+    text-align: left;
+}
+p.right, th.right, td.right {
+    text-align: right;
+}
+p.center, th.center, td.center {
+    text-align: center;
+}
+
+/* Center an image directly. */
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Change cursor shape over abbreviations and acronyms. */
+abbr, acronym {
+    cursor: help;
+}

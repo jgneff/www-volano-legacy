@@ -1,0 +1,104 @@
+/*
+    page.css - Rules for my identifier blocks and classes
+
+    When using the default Blueprint vertical grid of 18px, adjust the
+    total header height appropriately. The Garland header gradient
+    is 122px high including the top and bottom white pixels, so
+    pad the header to 126px in height (126/18 = 7 lines or 10.5em @
+    12px font size).
+*/
+
+/* Rules for my block identifiers. */
+
+/* Contents of container grid */
+#contents {}
+
+/* Header (masthead and branding) */
+#header {
+    height: 122px;      /* Set identical to header gradient height */
+}
+/* Center the 150px x 100px logo. */
+#site-logo {
+    margin-top: 11px;   /* Center vertically: (122px - 100px) / 2 = 11px */
+    text-align: center;
+}
+#site-info {
+    white-space: nowrap;
+}
+#site-name {}
+#site-slogan {}
+#site-links {}
+
+/* Left sidebar (navigation) */
+#nav {}
+
+/* Main text (article and sections) */
+#article {}
+
+/* Right sidebar (aside) */
+#aside {}
+#search {}
+
+/* Footer (copyright, trademark, privacy, and terms) */
+#footer {}
+
+/* Rules for related HTML elements. */
+
+/* Reduce size of registered trademark symbol in header. */
+#site-info sup {
+    font-size: 50%;
+}
+
+/* Primary navigation links to external Web sites. */
+#site-links ul {
+    list-style-type: none;
+    white-space: nowrap;
+    padding-left: 1.5em;    /* For IE 6 and 7 */
+    margin: 0;
+}
+#site-links ul li.selected {
+    list-style-type: disc;
+}
+
+/* Secondary navigation links to internal Web pages. */
+#nav ul {
+    list-style-type: none;
+    white-space: nowrap;
+    text-indent: 10px;
+    padding-left: 0;
+    margin: 0;
+}
+#nav li {
+    border-top: 1px solid #ddd;
+    margin-top: -1px;
+}
+#nav a {
+    display: block;
+}
+
+/* Let tables in the main column take their natural width. */
+#article table {
+    width: auto;
+}
+
+/* Don't let the sidebar text touch the right side of the container. */
+#aside p, #aside dd {
+    /* padding-right: 1em; */
+    /* padding-right: 10px; */
+}
+
+/*  Rules for my classes. */
+
+/* Expands the site name in headings. */
+.expand {
+    letter-spacing: 0.1em;
+}
+
+/* Redefine heading font sizes down one notch. */
+/* H1 */ #site-name {font-size:3em;line-height:1;margin-bottom:0.5em;}
+/* H2 */ h1 {font-size:2em;margin-bottom:0.75em;}
+/* H3 */ h2, #site-slogan, .aside-heading {font-size:1.5em;line-height:1;margin-bottom:1em;}
+/* H4 */ h3 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
+/* H5 */ h4 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+/* H6 */ h5 {font-size:1em;font-weight:bold;}
+/* H7 */ h6 {font-size:1em;}

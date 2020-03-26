@@ -1,0 +1,604 @@
+/*
+    colors.css - Color schemes from the Drupal Garland theme
+
+    Set the container background so we don't pick up the body
+    background. Remove the background color below to see the Blueprint
+    grid with the "showgrid" class.
+
+    Link Colors
+
+        Windows Internet Explorer 7 Defaults
+        Tools, Internet Options, General, Appearance, Colors
+            a           {text-decoration: underline;}
+            a:link      {color: #0000ff;}
+            a:visited   {color: #800080;}
+            a:focus     {}
+            a:hover     {}
+            a:active    {color: #ff0000;}
+
+        Mozilla Firefox Defaults
+        about:config (browser.*color)
+            a           {text-decoration: underline;}
+            a:link      {color: #0000ee;}
+            a:visited   {color: #551a8b;}
+            a:focus     {}
+            a:hover     {}
+            a:active    {color: #ee0000;}
+
+        Wikipedia
+        http://en.wikipedia.org/wiki/Wikipedia:Link_color
+            a           {text-decoration: none;}
+            a:link      {color: #002bb8;}
+            a:visited   {color: #5a3696;}
+            a:focus     {}
+            a:hover     {text-decoration: underline;}
+            a:active    {color: #faa700;}
+
+    Color schemes
+
+    Nocturnal           dark    blue    dark->light
+    Ash                 dark    grey    dark->light
+    Aquamarine          dark    green   dark->light
+    Belgian Chocolate   dark    red     dark->light
+    Teal Top            dark    green   dark->light
+
+    Cold Day            dark    blue    light->dark
+    Default Theme       dark    gray    none        (too boring)
+    Blue Lagoon         dark    blue    dark->light (too bright)
+    Bluemarine          dark    blue    none        (too Drupal)
+    Citrus Blast        light   yellow  dark->light (too yellow)
+    Greenbeam           light   green   dark->light (too bright)
+    Mediterrano         dark    orange  light->dark (too bright)
+    Mercury             light   grey    dark->light (too silvery)
+    Olivia              light   green   light->dark (too pea green)
+    Pink Plastic        light   pink    light->dark (too pink)
+    Shiny Tomato        dark    red     dark->light (too bright)
+*/
+
+/*
+
+Start:Default Theme
+
+body, #header {
+    background: white;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #c0c0c0;
+}
+
+End:Default Theme
+
+Start:Aquamarine
+
+body, #header {
+    background: #f2fafc url("images/garland/aquamarine.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #f2fafc;
+}
+
+End:Aquamarine
+
+Start:Ash
+
+body, #header {
+    background: #f1f2f2 url("images/garland/ash.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #f1f2f2;
+}
+
+End:Ash
+
+Start:Belgian Chocolate
+
+body, #header {
+    background: #fcf9f2 url("images/garland/belgian-chocolate.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #fcf9f2;
+}
+
+End:Belgian Chocolate
+
+Start:Blue Lagoon
+
+body, #header {
+    background: #edf5fa url("images/garland/blue-lagoon.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #edf5fa;
+}
+
+End:Blue Lagoon
+
+Start:Bluemarine
+
+body, #header {
+    background: #f1f1f1 url("images/garland/bluemarine.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #f1f1f1;
+}
+
+End:Bluemarine
+
+Start:Citrus Blast
+
+body, #header {
+    background: #fbfbf7 url("images/garland/citrus-blast.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: black;
+}
+#nav a:hover {
+    background-color: #fbfbf7;
+}
+
+End:Citrus Blast
+
+Start:Cold Day
+
+body, #header {
+    background: #edecf3 url("images/garland/cold-day.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #edecf3;
+}
+
+End:Cold Day
+
+Start:Greenbeam
+
+body, #header {
+    background: #fbfaf7 url("images/garland/greenbeam.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: black;
+}
+#nav a:hover {
+    background-color: #fbfaf7;
+}
+
+End:Greenbeam
+
+Start:Mediterrano
+
+body, #header {
+    background: #fffcf1 url("images/garland/mediterrano.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #fffcf1;
+}
+
+End:Mediterrano
+
+Start:Mercury
+
+body, #header {
+    background: #f5f6f7 url("images/garland/mercury.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: black;
+}
+#nav a:hover {
+    background-color: #f5f6f7;
+}
+
+End:Mercury
+
+Start:Nocturnal */
+
+body, #header {
+    background: #f3f3f8 url("images/garland/nocturnal.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #f3f3f8;
+}
+
+/* End:Nocturnal
+
+Start:Olivia
+
+body, #header {
+    background: #f5f9ef url("images/garland/olivia.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: black;
+}
+#nav a:hover {
+    background-color: #f5f9ef;
+}
+
+End:Olivia
+
+Start:Pink Plastic
+
+body, #header {
+    background: #eeeded url("images/garland/pink-plastic.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: black;
+}
+#nav a:hover {
+    background-color: #eeeded;
+}
+
+End:Pink Plastic
+
+Start:Shiny Tomato
+
+body, #header {
+    background: #f9f8fa url("images/garland/shiny-tomato.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #f9f8fa;
+}
+
+End:Shiny Tomato
+
+Start:Teal Top
+
+body, #header {
+    background: #eef3f1 url("images/garland/teal-top.png") repeat-x 0 0;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #002bb8;
+}
+a:visited {
+    color: #5a3696;
+}
+a:focus {
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+#contents {
+    background: white;
+}
+#header, #header a, #site-name {
+    color: white;
+}
+#nav a:hover {
+    background-color: #eef3f1;
+}
+
+End:Teal Top
+
+*/

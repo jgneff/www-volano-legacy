@@ -1,0 +1,2 @@
+#nav li {margin-top: 0px;}      /* For IE 6 and 7 */
+#nav li a {width: 100%;}        /* For IE 6 */
