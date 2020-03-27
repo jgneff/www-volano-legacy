@@ -95,7 +95,7 @@
 }
 
 /* Redefine heading font sizes down one notch. */
-/* H1 */ #site-name {font-size:3em;line-height:1;}
+/* H1 */ #site-name {font-size:2.5em;line-height:1.2;}
 /* H2 */ h1 {font-size:2em;margin-bottom:0.75em;}
 /* H3 */ #site-slogan {font-size:1.5em;line-height:1;}
 /* H3 */ h2, .aside-heading {font-size:1.5em;line-height:1;margin-bottom:1em;}
